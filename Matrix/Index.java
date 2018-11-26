@@ -119,6 +119,7 @@ public class Index{
 				Matrix m2 = getMatrix(t2, val2.get(0), val2.get(1));
 				Matrix m = m1.add(m2);
 				AnsMatrix.removeAll();
+				if (m.getRows() > 0){
 				AnsMatrix.setLayout(new GridLayout(m.getRows(), m.getColumns(), 10, 10));
 				for(int i = 0; i < m.getRows(); i++){
 					for (int j = 0; j < m.getColumns(); j++){
@@ -127,6 +128,11 @@ public class Index{
 						out.setText(str);
 						AnsMatrix.add(out);
 					}
+				}
+				}
+				else{
+					AnsMatrix.setLayout(new GridLayout(1, 1));
+					AnsMatrix.add(new JLabel("Invalid Input"));
 				}
 				AnsMatrix.revalidate();
 				AnsMatrix.repaint();		
@@ -139,6 +145,7 @@ public class Index{
 				Matrix m2 = getMatrix(t2, val2.get(0), val2.get(1));
 				Matrix m = m1.sub(m2);
 				AnsMatrix.removeAll();
+				if (m.getRows() > 0){
 				AnsMatrix.setLayout(new GridLayout(m.getRows(), m.getColumns(), 10, 10));
 				for(int i = 0; i < m.getRows(); i++){
 					for (int j = 0; j < m.getColumns(); j++){
@@ -147,6 +154,11 @@ public class Index{
 						out.setText(str);
 						AnsMatrix.add(out);
 					}
+				}
+				}
+				else{
+					AnsMatrix.setLayout(new GridLayout(1,1));
+					AnsMatrix.add(new JLabel("Invalid Input"));
 				}
 					AnsMatrix.revalidate();
 				AnsMatrix.repaint();	
@@ -159,6 +171,7 @@ public class Index{
 				Matrix m2 = getMatrix(t2, val2.get(0), val2.get(1));
 				Matrix m = m1.mult(m2);
 				AnsMatrix.removeAll();
+				if (m.getRows() > 0){
 				AnsMatrix.setLayout(new GridLayout(m.getRows(), m.getColumns(), 10, 10));
 				for(int i = 0; i < m.getRows(); i++){
 					for (int j = 0; j < m.getColumns(); j++){
@@ -167,6 +180,12 @@ public class Index{
 						out.setText(str);
 						AnsMatrix.add(out);
 					}
+				}
+				}
+
+				else{
+					AnsMatrix.setLayout(new GridLayout(1,1));
+					AnsMatrix.add(new JLabel("Invalid Input"));
 				}
 					AnsMatrix.revalidate();
 				AnsMatrix.repaint();	
@@ -179,6 +198,7 @@ public class Index{
 				Matrix m2 = getMatrix(t2, val2.get(0), val2.get(1));
 				Matrix m = m1.div(m2);
 				AnsMatrix.removeAll();
+				if (m.getRows() > 0){
 				AnsMatrix.setLayout(new GridLayout(m.getRows(), m.getColumns(), 10, 10));
 				for(int i = 0; i < m.getRows(); i++){
 					for (int j = 0; j < m.getColumns(); j++){
@@ -187,6 +207,12 @@ public class Index{
 						out.setText(str);
 						AnsMatrix.add(out);
 					}
+				}
+				}
+
+				else{
+					AnsMatrix.setLayout(new GridLayout(1,1));
+					AnsMatrix.add(new JLabel("Invalid Input"));
 				}
 					AnsMatrix.revalidate();
 				AnsMatrix.repaint();	
@@ -198,6 +224,7 @@ public class Index{
 				Matrix m1 = getMatrix(t1, val1.get(0), val1.get(1));
 				Matrix m = m1.inverse();
 				AnsMatrix.removeAll();
+				if (m.getRows() > 0){
 				AnsMatrix.setLayout(new GridLayout(m.getRows(), m.getColumns(), 10, 10));
 				for(int i = 0; i < m.getRows(); i++){
 					for (int j = 0; j < m.getColumns(); j++){
@@ -206,6 +233,12 @@ public class Index{
 						out.setText(str);
 						AnsMatrix.add(out);
 					}
+				}
+				}
+
+				else{
+					AnsMatrix.setLayout(new GridLayout(1,1));
+					AnsMatrix.add(new JLabel("Invalid Input"));
 				}
 					AnsMatrix.revalidate();
 				AnsMatrix.repaint();	
