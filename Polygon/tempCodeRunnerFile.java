@@ -1,0 +1,1 @@
+        Canvas panel = new Canvas();
