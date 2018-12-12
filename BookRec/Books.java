@@ -7,7 +7,7 @@ public class Books{
 	private int numB;
 
 	public Books(File f) throws IOException{
-		myB = new Book[100];
+		myB = new Book[55];
 		numB = 0;
 		Scanner r = new Scanner(f);
 		while (r.hasNext()){
@@ -17,6 +17,10 @@ public class Books{
 			numB++;
 		}
 		r.close();
+	}
+
+	public Book[] getBook(){
+		return myB;
 	}
 
 	public String toString(){
