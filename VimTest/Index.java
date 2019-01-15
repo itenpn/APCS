@@ -1,17 +1,23 @@
+import java.util.Random;
+
 public class Index{
 
 	public static void main(String[] args){
-	int g = 0;
-	int row = 4;
-	int col = 7;
-           for (int s = 0; s < row; s++) {
-               System.out.println("Row Pass");
-               for (int c = 0; c < col; c++) {
-                   System.out.println("Col Pass");
-                   g++;
-		   System.out.printf("g: %d s: %d c: %d\n", g, s, c);
-               }
-           }
+		int[] x = new int[1000];
+		Random r = new Random();
+		for (int i = 0; i < 1000; i++){
+			x[i] = r.nextInt();
+		}
+		for (int i = 0; i < 1000; i++)
+			for (int j = i; j < 1000; j++)
+				if (x[i] > x[j]){
+					int temp = x[i];
+					x[i] = x[j];
+					x[j] = temp;
+				}
+		for (int i : x){
+			System.out.println(i);
+		}
 	}
 
 }

@@ -35,7 +35,7 @@ public class Readers{
 		}
 		return new Reader();
 	}
-	
+
 	public Book popular(Reader SI, Books b){
 		int numbooks = 0;
 		for (Book i : b.getBook())
@@ -56,13 +56,78 @@ public class Readers{
 		return b.getBook()[current];
 	}
 
+	public Book methodC(Reader r, Books b){
+		int numbooks = 0;
+		for (Book i : b.getBook())
+			numbooks++;
+		int like = 0;
+		int booklike = 0;
+		int high = 0;
+		int current = 0;
+		int winner = 0;
+		for (Book j : b.getBook()){
+			if (r.getScore()[current] != 0){
+				current++;
+				continue;
+			}
+			booklike = 0;
+			for (Reader i : myR){
+				if (i.getName().equals(r.getName())){continue;}
+				like = 0;
+				for (int pos = 0; pos < numbooks; pos++){
+					like += r.getScore()[pos] * i.getScore()[pos];
+				}
+				booklike += like * i.getScore()[current];
+			}	
+			if (booklike > high){
+				high = booklike;
+				winner = current;
+			}
+			current++;
+		}
+		return b.getBook()[winner];
+	}
+
 	public Book methodB(Reader r, Books b){
+		int numbooks = 0;
+		for (Book i : b.getBook())
+			numbooks++;
+		int like = 0;
+		int high = 0;
+		int current = 0;
+		int winner = 0;
+		for (Reader i : myR){
+			if (i.getName().equals(r.getName())){
+				current++;
+				continue;
+			}
+			like = 0;
+			for (int pos = 0; pos < numbooks; pos++){
+				like += r.getScore()[pos] * i.getScore()[pos];
+			}
+			if (like > high){
+				high = like;
+				winner = current;
+			}
+			current++;
+		}
+		int pos = 0;
+		System.out.println(myR[winner].getName());
+		for (int i : myR[winner].getScore()){
+			if (r.getScore()[pos] == 0 && i == 5){
+				return b.getBook()[pos];
+			}
+			pos++;
+		}
 		return b.getBook()[0];
 	}
 
 	public Book matchReader(Reader r, Books b){
 		ArrayList<Reader> options = new ArrayList<Reader>();
 		for (Reader i : myR){
+			if (i.getName().equals(r.getName())){
+				continue;
+			}
 			/*
 			 * Checks if user has similar habits to other users
 			 * For example

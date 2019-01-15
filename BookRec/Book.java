@@ -35,7 +35,6 @@ public class Book{
 			changedTitle = "1984";
 		}
 		String path = "BookCovers/" + changedTitle + ".jpg";
-		System.out.println(changedTitle);
 		Image cover = Toolkit.getDefaultToolkit().getImage(path);
 		cover.getScaledInstance(50, 100, Image.SCALE_DEFAULT);
 		g.drawImage(cover, x, y, null);

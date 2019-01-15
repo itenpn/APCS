@@ -24,8 +24,6 @@ public class Index{
 			public void mouseClicked(MouseEvent e){
 				int index = readlist.locationToIndex(e.getPoint());
 				Reader CurrentReader = r.getReaders()[index];
-				System.out.println(r.popular(CurrentReader, b).toString());
-				System.out.println(r.matchReader(CurrentReader, b).toString());
 				output.draw(CurrentReader); }
 			public void mouseExited(MouseEvent e){}
 			public void mouseEntered(MouseEvent e){}
