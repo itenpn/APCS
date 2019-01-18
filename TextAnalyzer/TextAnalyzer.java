@@ -89,4 +89,18 @@ public class TextAnalyzer{
 			return "Pre-5th Grade";
 		}
 	}
+
+	public String toString(){
+		int numwords = w.size();
+		int numsyl = 0;
+		int numsent = 0;
+		for (int i = 0; i < numwords; i++){
+			numsyl += w.get(i).syllables();
+			if (w.get(i).hasEnd())
+				numsent++;
+		}
+		String x = String.format("Syllables: %d \n Words: %d \n Sentences: %d",
+				numsyl, numwords, numsent);
+		return x;
+	}
 }

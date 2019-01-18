@@ -6,6 +6,10 @@ public class Word{
 	
 	public Word(String w){myw = w.toLowerCase();}
 
+	public void append(String w){
+		myw += w.toLowerCase();
+	}
+
 	public boolean hasEnd(){
 		String c = "";
 		if (myw.length() > 1){
