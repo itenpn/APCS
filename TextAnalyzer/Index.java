@@ -60,7 +60,7 @@ public class Index{
 		ButtonPanel.add(TextBut);
 		ButtonPanel.setPreferredSize(new Dimension(100,100));
 		pane.add(ButtonPanel);
-		pane.add(text);
+		pane.add(new JScrollPane(text));
 		GUI.setVisible(true);
 	}
 

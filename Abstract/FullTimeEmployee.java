@@ -1,11 +1,15 @@
 public class FullTimeEmployee extends Employee {
 
+   private double uniondue;
+
    public FullTimeEmployee(){
       super();
+      uniondue = 0;
    }
   
-   public FullTimeEmployee(String n, double r, int h){
+   public FullTimeEmployee(String n, double r, int h, double u){
       super(n, r, h);
+      uniondue = u;
    }
 
    public double getPay() {
@@ -19,5 +23,7 @@ public class FullTimeEmployee extends Employee {
       totalPay += pay;
       return pay;
    }
+
+   public double getDues(){return uniondue;}
 }
 

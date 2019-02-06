@@ -50,7 +50,7 @@ abstract public class Employee {
    }
   
    abstract public double getPay();
-   
+   abstract public double getDues(); 
    //---------------------------------------
    
    public static double LOW_RATE = 6.75;

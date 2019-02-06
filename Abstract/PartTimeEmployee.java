@@ -14,5 +14,7 @@ public class PartTimeEmployee extends Employee {
       totalPay += pay;
       return pay;
    }
+
+   public double getDues(){return 0;}
 }
 
