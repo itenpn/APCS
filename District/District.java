@@ -48,6 +48,7 @@ public class District{
 	}
 
 	public void removeStu(int index){
+		Student.totalfees -= stus.get(index).getFee();
 		stus.remove(index);
 		Student.totalStu--;
 	}

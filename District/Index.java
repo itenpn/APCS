@@ -179,8 +179,8 @@ public class Index{
 
 		chgstu.addMouseListener( new MouseListener(){
 			public void mouseClicked(MouseEvent e){
-				String fname = JOptionPane.showInputDialog("What is the first name?");
-				String lname = JOptionPane.showInputDialog("What is the last name?");
+				String fname = x.getStudents().get(index).getfname();
+				String lname = x.getStudents().get(index).getlname();
 				double fee = Double.parseDouble(JOptionPane.showInputDialog("What is their current fee?"));
 				int idnum = x.getStudents().get(index).getID();
 				x.removeStu(index);

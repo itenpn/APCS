@@ -54,7 +54,8 @@ public abstract class Student{
 	public int[] getScores(){return score;}
 	public double getFee(){return fees;}
 	public void setID(int id){idnum = id; current_idnum--;}
-
+	public String getfname(){return fname;}
+	public String getlname(){return lname;}
 
 	public double getGPA(){
 		double sum = 0;
