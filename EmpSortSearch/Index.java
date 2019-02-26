@@ -36,17 +36,17 @@ public class Index{
 			int pos = -5;
 			while (pos == -5){
 				int mid = (low + high) / 2;
-				if (low >= high){
+				if (low > high){
 					pos = -1;
 				}
 				else if (emp.get(mid).getName().equals(SI)){
 					pos = mid;
 				}
 				else if (emp.get(mid).getName().compareTo(SI) < 0){
-					low = mid;
+					low = mid + 1;
 				}
 				else if (emp.get(mid).getName().compareTo(SI) > 0){
-					high = mid;
+					high = mid - 1;
 				}
 			}
 			if (pos >= 0){
