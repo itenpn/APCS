@@ -63,21 +63,21 @@ public final class Recursion{
 	 *
 	 * Postconditions: Returns the sum of base number and times it is added
 	 */
-	public static final int sum(int num, int times){
-		if (times == 0)
-			return num;
+	public static final int sum(int num){
+		if (num == 0)
+			return 0;
 		else
-			return num + sum(num, times - 1);
+			return num + sum(num - 1);
 	}
 
 	/* Preconditions: Same as sum
 	 *
 	 * Postconditions: Same as sum
 	 */
-	public static final int itersum(int num, int times){
-		int sum = num;
-		for (int i = 0; i < times; i++)
-			sum += num;
+	public static final int itersum(int num){
+		int sum = 0;
+		for (int i = 0; i <= num; i++)
+			sum += i;
 		return sum;
 	}
 
@@ -92,6 +92,14 @@ public final class Recursion{
 			return word;
 		else
 			return last + backwards(remaining);
+	}
+
+	public static final String iterbackwards(String word){
+		String x = "";
+		for (int i = word.length() - 1; i >= 0; i--){
+			x += word.substring(i, i + 1);
+		}
+		return x;
 	}
 
 	/* Preconditions: Takes in a word that you want checked as a palindrome
@@ -110,6 +118,45 @@ public final class Recursion{
 			return palindrome(word.substring(1, word.length() - 1));
 		else
 			return false;
+	}
+
+	public static final boolean iterpalindrome(String word){
+		return word.equals(iterbackwards(word));
+	}
+
+	public static final double binary(String binnum){
+		if (binnum.length() == 0)
+			return 0;
+		else if (binnum.substring(0 , 1).equals("1"))
+			return Math.pow(2, binnum.length() - 1) + binary(binnum.substring(1, binnum.length()));
+		else
+			return binary(binnum.substring(1, binnum.length()));
+	}
+
+	public static final double iterbinary(String binnum){
+		double x = 0;
+		for (int i = 0; i < binnum.length(); i++){
+			if (binnum.substring(i, i + 1).equals("1"))
+				x += Math.pow(2, binnum.length() - 1 - i);
+		}
+		return x;
+	}
+
+	public static final String toBinary(int num){
+		if (num == 0)
+			return "";
+		else
+			return toBinary(num / 2) + Integer.toString(num % 2);
+	}
+
+	public static final String itertoBinary(int num){
+		String x = "";
+		int curr = num;
+		while (curr > 0){
+			x += Integer.toString(curr % 2);
+			curr /= 2;
+		}
+		return iterbackwards(x);	
 	}
 
 }
