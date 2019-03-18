@@ -24,8 +24,7 @@ public class MagpieRunner2
 			System.out.println (maggie.getResponse(statement));
 			statement = in.nextLine();
 		}
-		System.out.println("You thought this was a program. But it was me, DIO! WWWWWWWWWWWRRRRRRYYYYYYYYYYYY!");
-		System.out.println("Omae wa mon Shinderu");
+		System.out.println("Hope I can talk to you again?");
 	}
 
 }
