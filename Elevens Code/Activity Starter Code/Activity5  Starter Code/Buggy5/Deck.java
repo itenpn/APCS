@@ -1,6 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
-
+import java.util.Random;
 /**
  * The Deck class represents a shuffled deck of cards.
  * It provides several operations including
@@ -31,11 +31,12 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		cards = new ArrayList<Card>();
-		for (int j = 1; j < ranks.length; j++) {
+		for (int j = 0; j < ranks.length; j++) {
 			for (String suitString : suits) {
 				cards.add(new Card(ranks[j], suitString, values[j]));
 			}
 		}
+		size = cards.size();
 		shuffle();
 	}
 
@@ -45,7 +46,7 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
-		return size < 0;
+		return size == 0;
 	}
 
 	/**
@@ -61,13 +62,13 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		for (int k = cards.size() - 1; k < 0; k--) {
-			int howMany = k + 1;
-			int start = 0;
-			int randPos = (int) (Math.random() * howMany) + start;
-			Card temp = cards.get(k);
-			cards.set(k, cards.get(randPos));
-			cards.set(randPos, temp);
+		Random rnum = new Random();
+		Card temp;
+		for (int i = 0; i < cards.size(); i++){
+			int k = rnum.nextInt(cards.size());
+			temp = cards.get(k);
+			cards.set(k, cards.get(i));
+			cards.set(i, temp);
 		}
 		size = cards.size();
 	}
@@ -78,10 +79,10 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		size--;
 		if (isEmpty()) {
 			return null;
 		}
+		size--;
 		Card c = cards.get(size);
 		return c;
 	}

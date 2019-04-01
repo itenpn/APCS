@@ -51,6 +51,17 @@ public class DeckTester {
 		System.out.println();
 		System.out.println();
 
+	
 		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		String[] ranks2 = {"1","2","3","4","5","6","7","8","9","10","J","Q","K"};
+		String[] suits2 = {"S", "C", "D", "H"};
+		int[] vals = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+		Deck d2 = new Deck(ranks2, suits2, vals);
+		Card c = d2.deal();
+		System.out.println(c.toString());
+		System.out.println(d2.toString());
+		System.out.println(d2.isEmpty());
+		System.out.println(d2.size());
+
 	}
 }
